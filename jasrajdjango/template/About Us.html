@@ -1,0 +1,561 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aspects Fieldwork & Research | Marketing Research Company</title>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/jpg" href="images/logo.png"/>
+
+    <!-- Fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <!-- NUMBER COUNTER -->
+    <script src="js/numscroller-1.0.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- CUSTOM CSS -->
+    <style type="text/css">
+    	*{
+    		font-family: 'Source Sans Pro', sans-serif;
+		}
+		#bg_slider{
+        	background-image: url(images/ARF_Slider.jpeg);
+        	background-size: cover;
+        	background-repeat: no-repeat;
+        	padding-bottom: 210px;
+        	width: 100%;
+            background-color: darkorange;
+            border-color: #0077B5;
+            border-width: 50px;
+            border-style: solid;
+        }
+        #defaultmenu ul li a:hover{
+        	background: none;
+            color: #7AA4BA;
+        }
+		#social_menus ul li{
+			list-style-type: none;
+			display: inline;
+		}
+		#social_menus ul li a{
+			font-size: 20px;
+			color: #fff;
+		}
+		ul li ul.dropdown{
+            min-width: 100%; /* Set width of the dropdown */
+            background: #f2f2f2;
+            display: none;
+            position: absolute;
+            z-index: 999;
+            left: 0;
+        }
+        ul li:hover ul.dropdown-menu{
+            display: block;	/* Display the dropdown */
+        }
+        ul li ul.dropdown-menu li{
+            display: block;
+        }
+        .img-responsive:hover{
+            opacity: 0.6;
+        }
+                #fb:hover{
+            color: #4267B2;
+        }
+        #insta:hover{
+            color: #8a3ab9;
+        }
+        #twitter:hover{
+            color:#1DA1F2;
+        }
+        #link:hover{
+            color: #0077b5;
+        }
+        #youtube:hover{
+            color: #FF0000;
+        }
+        textarea{
+            resize: none;
+        }
+        .block{
+            background-image: linear-gradient(to left,transparent,transparent 50%,#3A56A1 50%,#3A56A1);
+            background-position: 100% 0;
+            background-size: 200% 100%;
+            transition: all .25s ease-in;
+        }
+        .block:hover{
+            background-position: 0 0;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+	    <div class="navbar-header">
+	        <a href="#">
+	            <img src="{% static 'logo_1.png' %}" style="width:30%;" class="hidden-xs hidden-sm">
+	            <img src="{% static 'logo_1.png' %}" style="height: 90px;width:65%;" class="hidden-lg hidden-md">
+	        </a>
+	       <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle" style="margin-top: 8%;">
+	           <span class="icon-bar" style="background-color: #000;"></span>
+	           <span class="icon-bar" style="background-color: #000;"></span>
+	           <span class="icon-bar" style="background-color: #000;"></span>
+	       </button>
+	   </div>
+	   <div id="defaultmenu" class="navbar-collapse collapse">
+	       <ul class="nav navbar-nav navbar-right" style="margin-top: -8%;">
+	           <li><a href="{% url 'Home' %}">Home</a></li>
+	           <li><a href="{% url 'About Us' %}">About Us</a></li>
+	           <li class="dropdown">
+	               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+	               <ul class="dropdown-menu" style="background-color: #3A56A1;">
+	                   <center>
+	                   <li><a href="{% url 'Qualitative' %}" style="border-bottom: 1px solid #dcdcdc;color: #fff;">Qualitative</a></li>
+	                   <li><a href="{% url 'Quantitative' %}" style="border-bottom: 1px solid #dcdcdc;color: #fff;">Quantitative</a></li>
+	                   <li><a href="{% url 'OtherService' %}" style="border-bottom: 1px solid #dcdcdc;color: #fff;">Other Services</a></li>
+	                   </center>
+	               </ul>
+	           </li>
+	           <li><a href="{% url 'Industry' %}">Industry</a></li>
+	           <li><a href="{% url 'Coverage' %}">Coverage</a></li>
+	           <li><a href="{% url 'Contact Us' %}">Contact Us</a></li>
+	           <li><a href="{% url 'JionOurPanel' %}"><button type="button" class="btn btn-xs btn-success">Join our panel</button></a></li>
+	       </ul>
+	   </div>
+    </div>
+</nav>
+<br><br><br><br><br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-6">
+		    <!--<br><br>-->
+		    <img src="{% static 'about us.png' %}" style="width: 100%;">
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-6">
+		    <br>
+			<center class="wow fadeInUp">
+				<h2 style="font-family: 'Source Sans Pro', sans-serif;background-color: #3A56A1;color: #fff;padding: 10px 20px;border-radius: 5px;border: 2px solid #000;">About Aspects Fieldwork & Research</h2> <!-- #04abeb -->
+				<center><b style="font-size: 20px;">REDIRECTING CURIOSITY IN THE RIGHT DIRECTION</b></center>
+				<br>
+				<p style="text-align: justify;font-size: 16px;line-height: 24px;color: #000;">
+				    <span class="block">
+					Aspects Fieldwork & Research is a leading market research, analytics, and consulting firm that helps curate and extract the information you need to make accurate business decisions and track your competitive environment. Headquartered in Mumbai, India, Aspects Fieldwork & Research has a strong international presence spread across several other countries.</span>
+					<br><br>
+					<span class="block">
+					Our products and services are designed to help organizations everywhere redirect their curiosity in the right direction. Everyday people around the globe use Aspects Fieldwork & Research to find answers to millions of questions. These answers compile to become an evaluation that drives companies to grow, succeed, and formulate to solve today’s most compelling challenges.</span>
+					<br><br>
+					<span class="block">
+					We thrive to develop new ways to innovate new ways for people to amplify their share of voices
+					and opinions. Our research funnel is strategically divided as per the enterprise-grade format, focusing on small to large size organizations.</span>
+					<br><br>
+					<span class="block">
+					Empowering millions of active users to bring better products and services to the market by doing intricate and authentic details, delight their website and app users, promote customer loyalty, encourage their employees, and much more.</span>
+				</p>
+			</center>
+		</div>
+	</div>
+</div>
+<!-- Footer -->
+<style>
+  footer{
+background: #fff; /* #ea018a */ /*58FD1A */
+width: 100%;
+bottom: 0;
+left: 0;
+border-top: 1px solid #dcdcdc;
+}
+footer::before{
+content: '';
+position: absolute;
+left: 0;
+/*top: 100px;*/
+/*height: 1px;*/
+width: 100%;
+background: #000;
+}
+footer .content{
+max-width: 1250px;
+margin: auto;
+/*padding: 30px 40px 40px 40px;*/
+}
+footer .content .top{
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 50px;
+}
+.content .top .logo-details{
+color: #fff;
+font-size: 30px;
+}
+.content .top .media-icons{
+display: flex;
+}
+.content .top .media-icons a{
+height: 40px;
+width: 40px;
+margin: 0 8px;
+border-radius: 50%;
+text-align: center;
+line-height: 40px;
+color: #fff;
+font-size: 17px;
+text-decoration: none;
+transition: all 0.4s ease;
+}
+.top .media-icons a:nth-child(1){
+background: #4267B2;
+}
+.top .media-icons a:nth-child(1):hover{
+color: #4267B2;
+background: #fff;
+}
+.top .media-icons a:nth-child(2){
+background: #1DA1F2;
+}
+.top .media-icons a:nth-child(2):hover{
+color: #1DA1F2;
+background: #fff;
+}
+.top .media-icons a:nth-child(3){
+background: #E1306C;
+}
+.top .media-icons a:nth-child(3):hover{
+color: #E1306C;
+background: #fff;
+}
+.top .media-icons a:nth-child(4){
+background: #0077B5;
+}
+.top .media-icons a:nth-child(4):hover{
+color: #0077B5;
+background: #fff;
+}
+.top .media-icons a:nth-child(5){
+background: #FF0000;
+}
+.top .media-icons a:nth-child(5):hover{
+color: #FF0000;
+background: #fff;
+}
+footer .content .link-boxes{
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+footer .content .link-boxes .box{
+width: calc(100% / 5 - 10px);
+}
+.content .link-boxes .box .link_name{
+color: #000;
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 10px;
+position: relative;
+}
+.link-boxes .box .link_name::before{
+content: '';
+position: absolute;
+left: 0;
+bottom: -2px;
+height: 2px;
+width: 35px;
+background: orange;
+}
+.content .link-boxes .box li{
+margin: 6px 0;
+list-style: none;
+}
+.content .link-boxes .box li a{
+color: #F20C78;
+font-size: 14px;
+font-weight: bold;
+text-decoration: none;
+opacity: 0.8;
+transition: all 0.4s ease
+}
+.content .link-boxes .box li a:hover{
+opacity: 1;
+text-decoration: underline;
+}
+.content .link-boxes .input-box{
+margin-right: 55px;
+}
+.link-boxes .input-box input{
+height: 40px;
+width: calc(100% + 55px);
+outline: none;
+border: 2px solid orange; /*#AFAFB6*/
+background: #140B5C;
+border-radius: 4px;
+padding: 0 15px;
+font-size: 15px;
+color: #fff;
+margin-top: 5px;
+}
+.link-boxes .input-box input::placeholder{
+color: #AFAFB6;
+font-size: 16px;
+}
+.link-boxes .input-box input[type="button"]{
+background: #fff;
+color: #140B5C;
+border: none;
+font-size: 18px;
+font-weight: 500;
+margin: 4px 0;
+opacity: 0.8;
+cursor: pointer;
+transition: all 0.4s ease;
+}
+.input-box input[type="button"]:hover{
+opacity: 1;
+}
+footer .bottom-details{
+width: 100%;
+background: #000; /*2c303a*/
+}
+footer .bottom-details .bottom_text{
+max-width: 1250px;
+margin: auto;
+padding: 20px 40px;
+display: flex;
+justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+font-size: 14px;
+font-weight: 300;
+color: #fff;
+opacity: 0.8;
+text-decoration: none;
+}
+.bottom-details .bottom_text a:hover{
+opacity: 1;
+text-decoration: underline;
+}
+.bottom-details .bottom_text a{
+margin-right: 10px;
+}
+@media (max-width: 900px) {
+footer .content .link-boxes{
+  flex-wrap: wrap;
+}
+footer .content .link-boxes .input-box{
+  width: 40%;
+  margin-top: 10px;
+}
+}
+@media (max-width: 700px){
+footer{
+  position: relative;
+}
+.content .top .logo-details{
+  font-size: 26px;
+}
+.content .top .media-icons a{
+  height: 35px;
+  width: 35px;
+  font-size: 14px;
+  line-height: 35px;
+}
+footer .content .link-boxes .box{
+  width: calc(100% / 3 - 10px);
+}
+footer .content .link-boxes .input-box{
+  width: 60%;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+  font-size: 12px;
+}
+}
+@media (max-width: 520px){
+footer::before{
+  top: 145px;
+}
+footer .content .top{
+  flex-direction: column;
+}
+.content .top .media-icons{
+  margin-top: 16px;
+}
+footer .content .link-boxes .box{
+  width: calc(100% / 2 - 10px);
+}
+footer .content .link-boxes .input-box{
+  width: 100%;
+}
+}
+.text {
+color: white;
+font-size: 20px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+white-space: nowrap;
+}
+
+.svg-inline--fa {
+vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+text-align: center;
+padding: 08px 0px;
+margin-left: -8.7%;
+}
+
+.rounded-social-buttons .social-button {
+display: inline-block;
+position: relative;
+cursor: pointer;
+width: 3.125rem;
+height: 3.125rem;
+border: 0.125rem solid transparent;
+padding: 0;
+text-decoration: none;
+text-align: center;
+color: #fefefe;
+font-size: 1.5625rem;
+font-weight: normal;
+line-height: 2em;
+border-radius: 1.6875rem;
+transition: all 0.5s ease;
+margin-right: 0.25rem;
+margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+-webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.facebook {
+background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+color: #3b5998;
+background: #fefefe;
+border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.twitter {
+background: #55acee;
+}
+
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+color: #55acee;
+background: #fefefe;
+border-color: #55acee;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+color: #007bb5;
+background: #fefefe;
+border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.youtube {
+background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+color: #bb0000;
+background: #fefefe;
+border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram {
+background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+color: #125688;
+background: #fefefe;
+border-color: #125688;
+}
+</style>
+
+<footer>
+<div class="content">
+  <div class="top">
+    <div class="logo-details">
+    </div>
+    
+  </div>
+  <div class="link-boxes">
+      <ul class="box">
+      <li><a href="#"><img src="{% static 'logo_1.png' %}" style="width:150%;"></a></li>
+    </ul>
+      <ul class="box">
+      <li class="link_name">Services</li>
+      <li><a href="{% url 'Qualitative' %}">Qualitative</a></li>
+      <li><a href="{% url 'Quantitative' %}">Quantitative</a></li>
+      <li><a href="{% url 'OtherService' %}">Other Services</a></li>
+    </ul>
+    <ul class="box">
+      <li class="link_name">Address</li>
+              <p style="color:#F20C78;font-weight: bold;">Akshya Nagar 1st Block 1st Cross, Rammurthy nagar Bangalore-560016</p>
+    </ul>
+    <ul class="box">
+      <li class="link_name">Contact</li>
+      <li><a href="#" tel="919874563120">+91 9874563120</a></li>
+      <li><a href="#">+91 9874563210</a></li>
+      <li><a href="#">contact@arf.com</a></li>
+      <div class="rounded-social-buttons">
+                  <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                  <a class="social-button youtube" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                  <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+              </div>
+    </ul>
+  </div>
+</div>
+<div class="bottom-details">
+      <div class="bottom_text">
+          <span class="copyright_text">Copyright © 2021 <a href="#">Aspects Fieldwork & Research</a>| Design & Developed By <a href="#">Ntech Global Solutions</a></span>
+          <span class="policy_terms">
+      </span>
+    </div>
+  </div>
+</footer>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+</body>
+</html>
+
+{% endblock %}
